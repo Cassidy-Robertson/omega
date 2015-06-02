@@ -1,32 +1,24 @@
-
-
-<div class="col-md-6">
-
-<h1>Welcome!</h1>
-
-</div>
-
-
-
+<div class="row">
+  <div class="col-md-6">
+    <h1>Welcome!</h1>
+  </div>
   <!-- name and bio -->
   <div class="col-md-6">
     <h2><%= @user.name %></h2>
     <h3><%= @user.bio %></h3>
   </div>
+</div>
 
 
-<div class="container center_div">
+<div class="row">
   <!-- social buttons -->
 
   <div class="col-md-6">
-    <a class="btn btn-default" href="<%= @user.website %>" role="button">Website</a>
+    <%= link_to 'Website', @user.website, class: "btn btn-default"%>
+    <%= link_to 'Facebook', @user.facebook, class: "btn btn-default"%>
+    <%= link_to 'Twitter', @user.twitter, class: "btn btn-default"%>
+    <%= link_to 'LinkedIn', @user.linkedin, class: "btn btn-default"%>
 
-    <a class="btn btn-default" href="<%= @user.facebook %>" role="button">Facebook</a>
-
-    <a class="btn btn-default" href="<%= @user.twitter %>" role="button">Twitter</a>
-
-
-    <a class="btn btn-default" href="<%= @user.linkedin %>" role="button">LinkedIn</a>
   </div>
 </div>
 

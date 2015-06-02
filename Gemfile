@@ -47,10 +47,15 @@ gem 'bootstrap-sass', '~> 3.3.4'
 #for bootstrap
 
 gem 'rails_12factor', group: :production
-#for adding to heroku 
+#for adding to heroku
 
 group :development do
   gem 'guard-livereload', '~> 2.4', require: false
 end
 # for instant update on changes
 
+#adds images to the profiles using S3 (Amazon)
+gem 'carrierwave'
+
+#piggybacks off carrierwave gem
+gem "fog"

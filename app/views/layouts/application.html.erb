@@ -20,7 +20,7 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="/">
-          <img style="max-width: 90px; margin-top: -12px;" alt="Omega" src="assets/omega3.png">
+          <%= image_tag 'omega3.png', style: "max-width: 90px; margin-top: -12px;" %>
         </a>
       </div>
 
@@ -53,8 +53,12 @@
       <div class='col-md-3'>
 
 
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+        <% if notice %>
+          <p class="alert alert-success"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p class="alert alert-danger"><%= alert %></p>
+        <% end %>
 
       </div>
     </div>

@@ -8,5 +8,6 @@ class User < ActiveRecord::Base
   mount_uploader :profile_background, ProfileBackgroundUploader
 
   has_many :courses, foreign_key: "teacher_id"
-
+  has_many :enrollments, foreign_key: "student_id"
+  has_many :classes, through: :enrollments, source: :course
 end

@@ -54,11 +54,14 @@ group :development do
 end
 # for instant update on changes
 
-#adds images to the profiles using S3 (Amazon)
+# adds images to the profiles using S3 (Amazon)
 gem 'carrierwave'
 
-#piggybacks off carrierwave gem
+# piggybacks off carrierwave gem
 gem "fog"
 
-#add secret keys
+# add secret keys
 gem 'dotenv-rails', :groups => [:development, :test]
+
+# adds devise for user authentication
+gem 'devise'

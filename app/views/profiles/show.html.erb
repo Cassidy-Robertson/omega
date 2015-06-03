@@ -6,6 +6,9 @@
   <div class="col-md-6">
     <h2><%= @user.name %></h2>
     <h3><%= @user.bio %></h3>
+    <% @user.courses.each do |teach| %>
+    <h3><%= teach.topic %></h3>
+    <% end %>
   </div>
 </div>
 

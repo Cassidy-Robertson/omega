@@ -4,8 +4,8 @@ class UserTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   #  test "user can have many courses" do
-   
-   test "user can take many classes" do
+
+   test "user can take many courses" do
     tim = User.create!(email: "tmurray002@gmail.com", password: "12345678")
     kenny = User.create!(email: "kenny@gmail.com", password: "12345678")
     steven = User.create!(email: "steven@example.com", password: "12345678")
@@ -16,9 +16,9 @@ class UserTest < ActiveSupport::TestCase
     swag202.students << kenny
     swag202.students << steven
 
-    assert_equal steven.classes.size, 1
-    assert_equal steven.classes.first.topic, 'master the art of swag'
-    
+    assert_equal steven.courses_taken.size, 1
+    assert_equal steven.courses_taken.first.topic, 'master the art of swag'
+
   end
 
 

@@ -17,7 +17,7 @@ class CourseTest < ActiveSupport::TestCase
     swag202.teacher = tim
     swag202.save
 
-    assert_equal tim.courses.length, 1
+    assert_equal tim.courses_taught.length, 1
   end
 
   test "a course can have students" do
@@ -35,4 +35,3 @@ class CourseTest < ActiveSupport::TestCase
     assert swag202.students.include?(steven)
   end
 end
-

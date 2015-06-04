@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-
-
   resources :courses
 
   resources :enrollments, only: [:create]
@@ -11,6 +9,5 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get 'profiles/:id' => 'profiles#show'
-
 
 end

@@ -9,7 +9,7 @@ class CoursesController < ApplicationController
    @course.save
 
 
-   redirect_to root_path
+   redirect_to "/profiles/#{current_user.id}"
   end
 
   private

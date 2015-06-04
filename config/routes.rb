@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'courses/new'
+  resources :courses
 
   devise_for :users, path_names: {sign_in: 'login', sign_out: 'logout'}
 
@@ -8,6 +8,5 @@ Rails.application.routes.draw do
 
   get 'profiles/:id' => 'profiles#show'
 
-  resources :courses 
 
 end

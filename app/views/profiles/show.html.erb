@@ -9,6 +9,11 @@
     <% @user.courses.each do |teach| %>
     <h3><%= teach.topic %></h3>
     <% end %>
+
+    <% @user.classes.each do |take| %>
+    <h3><%= take.topic %></h3>
+    <% end %>
+
   </div>
 </div>
 

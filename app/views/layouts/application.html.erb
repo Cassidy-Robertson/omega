@@ -29,6 +29,7 @@
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
           <%= link_to 'Edit profile', edit_user_registration_path, class: "btn btn-default navbar-btn" %>
+          <%= link_to 'View profile', '/show/<', class: "btn btn-default navbar-btn" %>
           <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-default navbar-btn" %>
           <p class="navbar-text">Logged in as <strong><%= current_user.email %></strong></p>
           <% else %>

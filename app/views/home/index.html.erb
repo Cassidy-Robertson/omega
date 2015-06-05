@@ -1,3 +1,8 @@
-<h1>Omega</h1>
+<h3>background video goes here</h3>
 
-<h3>Share Your Knowledge</h3>
+
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:query, "Search for:") %>
+  <%= text_field_tag(:query) %>
+  <%= submit_tag("Search") %>
+<% end %>

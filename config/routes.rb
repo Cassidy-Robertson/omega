@@ -6,9 +6,10 @@ Rails.application.routes.draw do
 
   devise_for :users, path_names: {sign_in: 'login', sign_out: 'logout'}, controllers: { registrations: "users/registrations" }
 
-
   root 'home#index'
 
   get 'profiles/:id' => 'profiles#show'
+
+  get 'search' => 'search#search'
 
 end

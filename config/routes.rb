@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   resources :enrollments, only: [:create]
 
-  devise_for :users, path_names: {sign_in: 'login', sign_out: 'logout'}
+  devise_for :users, path_names: {sign_in: 'login', sign_out: 'logout'}, controllers: { registrations: "users/registrations" }
+
 
   root 'home#index'
 

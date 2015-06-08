@@ -24,4 +24,8 @@ class CoursesController < ApplicationController
    params.require(:course).permit(:topic)
   end
 
+
+  def show
+    @course = Course.find(params[:course_params])
+  end
 end

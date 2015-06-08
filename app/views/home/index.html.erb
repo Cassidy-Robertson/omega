@@ -1,9 +1,8 @@
- 
 <div id= home-center>
-
- <%= image_tag 'omega-no-text.png', style: "max-width: 300px; margin-top: 20px;" %>
- </div>
-
-<h1>Omega</h1>
-
-<h3>Share Your Knowledge</h3>
+  <h3>Share your knowledge</h3>
+  <%= form_tag("/search", method: "get") do %>
+    <%= label_tag(:query, "Search for:") %>
+    <%= text_field_tag(:query) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+</div>

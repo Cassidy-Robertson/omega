@@ -1,8 +1,8 @@
-<h3>background video goes here</h3>
-
-
-<%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:query, "Search for:") %>
-  <%= text_field_tag(:query) %>
-  <%= submit_tag("Search") %>
-<% end %>
+<div id= home-center>
+  <h3>Share your knowledge</h3>
+  <%= form_tag("/search", method: "get") do %>
+    <%= label_tag(:query, "Search for:") %>
+    <%= text_field_tag(:query) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+</div>

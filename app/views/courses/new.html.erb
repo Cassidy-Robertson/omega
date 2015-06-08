@@ -1,6 +1,59 @@
 <h1>Teach a Course</h1>
 
-<%= form_for @course do |f| %>
-  <%= f.text_field :topic %>
-  <%= f.submit "create" %>
-<% end %>
+  <div class="col-md-6 col-md-offset-6">
+
+   <%= form_for @course do |f| %>
+
+     <div class="field">
+       <%= f.label :topic %><br />
+       <%= f.text_field :topic %>
+     </div>
+
+     <div class="field">
+       <%= f.label :description %> <br />
+       <%= f.text_field :description %>
+     </div>
+
+     <div class="field">
+       <%= f.label :date %><br />
+       <%= f.text_field :date %>
+     </div>
+
+     <div class="field">
+       <%= f.label :time %> <br />
+       <%= f.text_field :time %>
+     </div>
+
+     <div class="field">
+      <%= f.label :duration %><br />
+      <%= f.text_field :duration %>
+    </div>
+
+     <div class="field">
+       <%= f.label :street %><br />
+       <%= f.text_field :street %>
+     </div>
+
+      <div class="field">
+       <%= f.label :city %><br />
+       <%= f.text_field :city %>
+     </div>
+
+      <div class="field">
+       <%= f.label :state %><br />
+       <%= f.text_field :state %>
+     </div>
+
+      <div class="field">
+       <%= f.label :zipcode %><br />
+       <%= f.text_field :zipcode%>
+     </div>
+
+     <%= f.submit "create" %>
+     <% end %>
+
+   <%= link_to "Back", :back %>
+
+
+
+	</div>

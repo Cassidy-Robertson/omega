@@ -16,17 +16,17 @@
 
      <div class="field">
        <%= f.label :date %><br />
-       <%= f.text_field :date %>
+       <%= f.date_field :date %>
      </div>
 
      <div class="field">
        <%= f.label :time %> <br />
-       <%= f.text_field :time %>
+       <%= f.time_field :time %>
      </div>
 
      <div class="field">
       <%= f.label :duration %><br />
-      <%= f.text_field :duration %>
+      <%= f.number_field :duration, min: 0, step: 0.5  %>
     </div>
 
      <div class="field">

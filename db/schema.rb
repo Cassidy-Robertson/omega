@@ -43,15 +43,6 @@ ActiveRecord::Schema.define(version: 20150608140845) do
   add_index "enrollments", ["course_id"], name: "index_enrollments_on_course_id", using: :btree
   add_index "enrollments", ["student_id"], name: "index_enrollments_on_student_id", using: :btree
 
-  create_table "notifications", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "notifications", ["user_id"], name: "index_notifications_on_user_id", using: :btree
-
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "bio"
@@ -79,5 +70,4 @@ ActiveRecord::Schema.define(version: 20150608140845) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "enrollments", "courses"
-  add_foreign_key "notifications", "users"
 end

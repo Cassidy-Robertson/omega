@@ -1,0 +1,17 @@
+<h1>Welcome, to <%= @course.topic %>!</h1>
+<h2>Being taught by: <%= @course.teacher.name %> </h2>
+
+<h3>Course Description:</h3>
+<h4><%= @course.description %></h4>
+
+<h3>Duration:</h3>
+<h4><%= @course.duration %></h4>
+
+<h3>Date:</h3>
+<h4><%= @course.date %></h4>
+
+<h3>Time:</h3>
+<h4><%= @course.time %></h4>
+
+<h3>Location:</h3>
+<h4><%= @course.street %>, <%= @course.city %>, <%= @course.state %> <%= @course.zipcode %></h4>

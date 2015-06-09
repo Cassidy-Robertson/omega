@@ -7,6 +7,25 @@
   <% end %>
 </div>
 
+<div id= home-center>
+  <h3>By zipcode</h3>
+  <%= form_tag("/zipcodesearch", method: "get") do %>
+    <%= label_tag(:query, "Search for:") %>
+    <%= text_field_tag(:query) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+</div>
+
+<div id= home-center>
+  <h3>By date</h3>
+  <%= form_tag("/datesearch", method: "get") do %>
+    <%= label_tag(:query, "Search for:") %>
+    <%= date_field_tag(:query) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+</div>
+
+
 <div>
   <% @courses.each do |course| %>
     <h3><%= course.topic %> </h3>

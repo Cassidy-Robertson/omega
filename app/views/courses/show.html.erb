@@ -1,6 +1,9 @@
 <h1>Welcome, to <%= @course.topic %>!</h1>
 <h2>Being taught by: <%= @course.teacher.name %> </h2>
 
+<%= image_tag(params[:profile_picture], :alt => "profile pic") %>
+
+
 <h3>Course Description:</h3>
 <h4><%= @course.description %></h4>
 

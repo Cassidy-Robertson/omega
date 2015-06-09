@@ -10,7 +10,7 @@
 <div>
   <% @courses.each do |course| %>
     <h3><%= course.topic %> </h3>
-    <%= button_to('View Course', course_path(course.id), method: :get) %>
+    <%= button_to('View Course', course_path(course.id), method: :get, class: "btn btn-default btn-sm") %>
   <% end %>
 </div>
 

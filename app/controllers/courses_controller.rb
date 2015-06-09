@@ -1,5 +1,7 @@
 class CoursesController < ApplicationController
-  
+
+  skip_before_action :authenticate_user!, only: [:show]
+
   def index
     @courses = Course.all
   end
@@ -15,7 +17,11 @@ class CoursesController < ApplicationController
    @course.save
 
 
-   redirect_to "/profiles/#{current_user.id}"
+   redirect_to action: "index"
+  end
+
+  def show
+    @course = Course.find(params[:id])
   end
 
   def show
@@ -26,7 +32,7 @@ class CoursesController < ApplicationController
   private
 
   def course_params
-   params.require(:course).permit(:topic, :description, :duration, :date, :time, :street, :city, :state, :zipcode)
+   params.require(:course).permit(:topic, :date, :time, :street, :city, :state, :zipcode, :description, :duration)
   end
 
 end

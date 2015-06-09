@@ -1,9 +1,15 @@
- 
 <div id= home-center>
+  <h3>Share your knowledge</h3>
+  <%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:query, "Search for:") %>
+  <%= text_field_tag(:query) %>
+  <%= submit_tag("Search") %>
+  <% end %>
+</div>
 
- <%= image_tag 'omega-no-text.png', style: "max-width: 300px; margin-top: 20px;" %>
- </div>
-
-<h1>Omega</h1>
-
-<h3>Share Your Knowledge</h3>
+<div>
+  <% @courses.each do |course| %>
+    <h3><%= course.topic %> </h3>
+    <%= button_to('View Course', course_path(course.id), method: :get) %>
+  <% end %>
+</div>

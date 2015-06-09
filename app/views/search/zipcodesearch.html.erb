@@ -1,0 +1,9 @@
+<% if @zipresults.length === 0 %>
+    <h3> no courses at this zipcode </h3>
+ <% else %>
+  <% @zipresults.each do |results| %>
+
+    <h3><%= results.topic %> is being taught at zipcode: <%= results.zipcode %> </h3>
+
+  <% end %>
+<% end %>

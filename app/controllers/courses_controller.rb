@@ -18,14 +18,15 @@ class CoursesController < ApplicationController
    redirect_to "/profiles/#{current_user.id}"
   end
 
+  def show
+    @course = Course.find(params[:id])
+    # @course = Course.find(params[:id])
+  end
+
   private
 
   def course_params
-   params.require(:course).permit(:topic)
+   params.require(:course).permit(:topic, :description, :duration, :date, :time, :street, :city, :state, :zipcode)
   end
 
-
-  def show
-    @course = Course.find(params[:course_params])
-  end
 end

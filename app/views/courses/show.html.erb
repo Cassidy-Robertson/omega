@@ -16,7 +16,11 @@
 <h3>Location:</h3>
 <h4><%= @course.street %>, <%= @course.city %>, <%= @course.state %> <%= @course.zipcode %></h4>
 
-
 <h3>Tags:</h3>
 <h4><%= @course.tag_list %>
 </h4>
+
+<h3> Click Below to Enroll! </h3>
+<%= link_to 'Enroll', enrollments_path(course_id: @course.id), method: :post, class: "btn btn-default btn-sm" %><br />
+
+<br /><%= link_to 'Return to Full Course List', courses_path %>

@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20150609150041) do
   add_index "enrollments", ["course_id"], name: "index_enrollments_on_course_id", using: :btree
   add_index "enrollments", ["student_id"], name: "index_enrollments_on_student_id", using: :btree
 
+<<<<<<< HEAD
   create_table "notifications", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "text"

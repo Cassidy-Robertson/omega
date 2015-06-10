@@ -1,49 +1,3 @@
-<<<<<<< Updated upstream
-<div class="row">
-  <div class="col-md-6">
-    <h1>Welcome, <%= @user.name %>!</h1>
-  </div>
-  <!-- name and bio -->
-  <div class="col-md-6">
-    <h4><%= @user.bio %></h4>
-
-    <h3>Courses currently teaching:</h3>
-    <ul>
-      <% @user.courses_taught.each do |taught| %>
-        <li><%= taught.topic %></li>
-      <% end %>
-    </ul>
-
-    <h3>Courses currently learning:</h3>
-    <ul>
-      <% @user.courses_taken.each do |taken| %>
-      <li><%= taken.topic %></li>
-      <% end %>
-    </ul>
-
-  </div>
-</div>
-
-
-
-
-<div class="row">
-  <!-- social buttons -->
-
-  <div class="col-md-6">
-    <%= link_to 'Website', @user.website, class: "btn btn-default"%>
-    <%= link_to 'Facebook', @user.facebook, class: "btn btn-default"%>
-    <%= link_to 'Twitter', @user.twitter, class: "btn btn-default"%>
-    <%= link_to 'LinkedIn', @user.linkedin, class: "btn btn-default"%>
-
-  </div>
-
-  <%= link_to 'Create a course', '/courses/new', class: "btn btn-default"%>
-  <%= link_to 'Learn a course', '/courses', class: "btn btn-default"%>
-
-
-</div>
-=======
 <div class="container">
 
     <div class="fb-profile">
@@ -87,4 +41,3 @@
       <br></br>
 
 </div> <!-- /container -->
->>>>>>> Stashed changes

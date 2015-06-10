@@ -8,8 +8,12 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  get 'profiles/:id' => 'profiles#show'
+  get 'profiles/:id' => 'profiles#show', as: :profile
 
   get 'search' => 'search#search'
+
+  get 'zipcodesearch' => 'search#zipcodesearch'
+
+  get 'datesearch' => 'search#datesearch'
 
 end

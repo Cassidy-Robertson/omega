@@ -1,3 +1,7 @@
-<% @results.each do |results| %>
-  <h3><%= results.topic %> </h3>
+<% if @results.length == 0 %>
+    <h3> No such Course is offered at this time </h3>
+  <% else %>
+  <% @results.each do |results| %>
+    <h3><%= results.topic %> </h3>
+  <% end %>
 <% end %>

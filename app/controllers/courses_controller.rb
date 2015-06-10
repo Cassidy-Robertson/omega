@@ -16,17 +16,14 @@ class CoursesController < ApplicationController
    @course.teacher = current_user
    @course.save
 
+     redirect_to action: "index"
+    end
 
-   redirect_to action: "index"
-  end
 
-  def show
+    def show
     @course = Course.find(params[:id])
-  end
 
-  def show
-    @course = Course.find(params[:id])
-    # @course = Course.find(params[:id])
+   redirect_to "/profiles/#{current_user.id}"
   end
 
   private

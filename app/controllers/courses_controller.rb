@@ -26,7 +26,6 @@ class CoursesController < ApplicationController
   def show
     @course = Course.find(params[:id])
 
-    redirect_to "/profiles/#{current_user.id}"
   end
 
 

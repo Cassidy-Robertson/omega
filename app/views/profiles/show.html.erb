@@ -14,8 +14,7 @@
       <h4>Courses currently teaching:</h4>
       <ul>
         <% @user.courses_taught.each do |taught| %>
-          <li><%= taught.topic %><link rel="stylesheet" href="/css/master.css" media="screen" title="no title" charset="utf-8"></li>
-          <%= link_to(taught.topic, course_path(course.id)) %>
+          <li><%= link_to(taught.topic, course_path(taught.id)) %></li>
         <% end %>
       </ul>
       <%= link_to 'Create a course', '/courses/new', class: "btn btn-default"%>
@@ -24,7 +23,7 @@
       <h4>Courses currently learning:</h4>
       <ul>
         <% @user.courses_taken.each do |taken| %>
-        <li><%= taken.topic %></li>
+        <li><%= link_to(taken.topic, course_path(taken.id)) %></li>
         <% end %>
       </ul>
       <%= link_to 'Learn a course', '/courses', class: "btn btn-default"%>

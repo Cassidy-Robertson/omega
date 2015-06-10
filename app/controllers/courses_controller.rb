@@ -10,6 +10,7 @@ class CoursesController < ApplicationController
   end
 
   def create
+   binding.pry
    @course = Course.new(course_params)
    @course.teacher = current_user
    @course.save

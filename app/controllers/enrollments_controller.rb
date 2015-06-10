@@ -6,6 +6,11 @@ class EnrollmentsController < ApplicationController
   @enrollment.student_id = current_user.id
   @enrollment.save
 
+<<<<<<< Updated upstream
+=======
+  # course = Course.find_by :id => params[:course_id]
+  # course.teacher.notifications.create(text: "#{current_user.name} has just joined your class, on #{course.topic}.")
+>>>>>>> Stashed changes
 
   redirect_to "/profiles/#{current_user.id}"
  end

@@ -1,53 +1,42 @@
-<div class="row">
-  <div class="col-md-6">
+<div class="container">
 
-  <h1>Welcome, <%= @user.name %>!</h1>
-  </div>
+    <div class="fb-profile">
+        <img align="left" class="fb-image-lg" src="<%= @user.profile_background %>" alt="Profile image example"/>
+        <img align="left" class="fb-image-profile thumbnail" src="<%= @user.profile_picture %>" alt="Profile image example"/>
+        <div class="fb-profile-text">
+            <h1><%= @user.name %></h1>
+            <p><%= @user.bio %></p>
+        </div>
+    </div>
 
+    <div class="col-md-9">
 
-<div>
-  <%= image_tag(@user.profile_background, :alt => @user.name, class:"profile-image img-responsive") %>
-  <%= image_tag(@user.profile_picture, :alt => @user.name, class:"img-responsive") %>
-</div>
+      <h4>Courses currently teaching:</h4>
+      <ul>
+        <% @user.courses_taught.each do |taught| %>
+          <li><%= taught.topic %></li>
+        <% end %>
+      </ul>
+      <%= link_to 'Create a course', '/courses/new', class: "btn btn-default"%>
+      <br></br>
 
+      <h4>Courses currently learning:</h4>
+      <ul>
+        <% @user.courses_taken.each do |taken| %>
+        <li><%= taken.topic %></li>
+        <% end %>
+      </ul>
+      <%= link_to 'Learn a course', '/courses', class: "btn btn-default"%>
+      <br></br>
 
-  <!-- name and bio -->
-  <div class="col-md-6">
-    <h4><%= @user.bio %></h4>
+    </div>
 
-    <h3>Courses currently teaching:</h3>
-    <ul>
-      <% @user.courses_taught.each do |taught| %>
-        <li><%= taught.topic %></li>
-      <% end %>
-    </ul>
+      <div class="col-md-6">
+        <%= link_to 'Website', @user.website, class: "btn btn-default"%>
+        <%= link_to 'Facebook', @user.facebook, class: "btn btn-default"%>
+        <%= link_to 'Twitter', @user.twitter, class: "btn btn-default"%>
+        <%= link_to 'LinkedIn', @user.linkedin, class: "btn btn-default"%>
+      </div>
+      <br></br>
 
-    <h3>Courses currently learning:</h3>
-    <ul>
-      <% @user.courses_taken.each do |taken| %>
-      <li><%= taken.topic %></li>
-      <% end %>
-    </ul>
-
-  </div>
-</div>
-
-
-
-
-<div class="row">
-  <!-- social buttons -->
-
-  <div class="col-md-6">
-    <%= link_to 'Website', @user.website, class: "btn btn-default"%>
-    <%= link_to 'Facebook', @user.facebook, class: "btn btn-default"%>
-    <%= link_to 'Twitter', @user.twitter, class: "btn btn-default"%>
-    <%= link_to 'LinkedIn', @user.linkedin, class: "btn btn-default"%>
-
-  </div>
-
-  <%= link_to 'Create a course', '/courses/new', class: "btn btn-default"%>
-  <%= link_to 'Learn a course', '/courses', class: "btn btn-default"%>
-
-
-</div>
+</div> <!-- /container -->

@@ -66,3 +66,13 @@ gem 'dotenv-rails', :groups => [:development, :test]
 
 # adds devise for user authentication
 gem 'devise'
+
+
+# adds letsrate gem for 5-star rating system
+gem 'letsrate'
+
+#for adding intrest tags
+gem 'acts-as-taggable-on', '~> 3.4'
+
+
+

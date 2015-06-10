@@ -1,8 +1,17 @@
 <div id= home-center>
   <h3>Share your knowledge</h3>
   <%= form_tag("/search", method: "get") do %>
-    <%= label_tag(:query, "Search for:") %>
-    <%= text_field_tag(:query) %>
-    <%= submit_tag("Search") %>
+  <%= label_tag(:query, "Search for:") %>
+  <%= text_field_tag(:query) %>
+  <%= submit_tag("Search") %>
   <% end %>
 </div>
+
+<div>
+  <% @courses.each do |course| %>
+    <h3><%= course.topic %> </h3>
+    <%= button_to('View Course', course_path(course.id), method: :get) %>
+  <% end %>
+</div>
+
+<%= link_to('See All Courses', courses_path) %>

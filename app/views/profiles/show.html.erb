@@ -4,7 +4,12 @@
   <h1>Welcome, <%= @user.name %>!</h1>
   </div>
 
-  <%= image_tag(@user.profile_picture, :alt => "profile pic") %>
+
+<div>
+  <%= image_tag(@user.profile_background, :alt => @user.name, class:"profile-image img-responsive") %>
+  <%= image_tag(@user.profile_picture, :alt => @user.name, class:"img-responsive") %>
+</div>
+
 
   <!-- name and bio -->
   <div class="col-md-6">

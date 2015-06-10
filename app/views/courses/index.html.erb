@@ -3,10 +3,11 @@
 <% @courses.each do |course| %>
   <h3><%= course.topic %> </h3>
   <%= button_to('View Course', course, method: :get, class: "btn btn-default btn-sm") %>
+   <% if course.teacher == current_user %>
   <h3><%= button_to "delete", {:controller => :courses,
       :action => 'destroy', :id => course.id },  data: { confirm: "Are you sure?" }, :method => :delete, class: "btn btn-danger btn-xs" %> </h3>
+      <% else %>
+      <h3> You must be the creator of this course to delete!  </h3>
+     <% end %>
 
   <% end %>
-
-
- 

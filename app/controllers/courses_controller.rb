@@ -13,10 +13,11 @@ class CoursesController < ApplicationController
   end
 
   def create
+
     @course = Course.new(course_params)
     @course.teacher = current_user
     @course.save
-   
+
     @course.tag_list.add(params[:course][:tag_list], parse: true)
     
 
@@ -25,8 +26,9 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
-  end
 
+    redirect_to "/profiles/#{current_user.id}"
+  end
 
 
   private

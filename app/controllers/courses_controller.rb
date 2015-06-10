@@ -8,28 +8,35 @@ class CoursesController < ApplicationController
 
 
   def new
-   @course = Course.new
+    @course = Course.new
   end
 
   def create
-   @course = Course.new(course_params)
-   @course.teacher = current_user
-   @course.save
+    @course = Course.new(course_params)
+    @course.teacher = current_user
+    @course.save
 
-     redirect_to action: "index"
-    end
+    redirect_to action: "index"
+   end
 
 
-    def show
+   def show
     @course = Course.find(params[:id])
 
-   redirect_to "/profiles/#{current_user.id}"
+    redirect_to "/profiles/#{current_user.id}"
+   end
+
+  def destroy
+    @course = Course.find(params[:id])
+    @course.destroy
+
+    redirect_to "/profiles/#{current_user.id}"
   end
 
   private
 
   def course_params
-   params.require(:course).permit(:topic, :date, :time, :street, :city, :state, :zipcode, :description, :duration)
+    params.require(:course).permit(:topic, :date, :time, :street, :city, :state, :zipcode, :description, :duration)
   end
 
 end

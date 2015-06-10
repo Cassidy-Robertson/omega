@@ -3,4 +3,7 @@
 <% @courses.each do |course| %>
   <h3><%= course.topic %> </h3>
   <%= button_to('View Course', course, method: :get, class: "btn btn-default btn-sm") %>
+  <h3><%= button_to "delete", {:controller => :courses,
+      :action => 'destroy', :id => course.id },  data: { confirm: "Are you sure?" }, :method => :delete, class: "btn btn-danger btn-xs" %> </h3>
+
   <% end %>

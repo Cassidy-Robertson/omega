@@ -1,143 +1,42 @@
 <div class="container">
 
-  <div class="row">
-    <div class="col-md-6">
-      <h1>Welcome, <%= @user.name %>!</h1>
+    <div class="fb-profile">
+        <img align="left" class="fb-image-lg" src="<%= @user.profile_background %>" alt="Profile image example"/>
+        <img align="left" class="fb-image-profile thumbnail" src="<%= @user.profile_picture %>" alt="Profile image example"/>
+        <div class="fb-profile-text">
+            <h1><%= @user.name %></h1>
+            <p><%= @user.bio %></p>
+        </div>
     </div>
 
-  <div>
-    <%= image_tag(@user.profile_background, :alt => @user.name, class:"profile-image img-responsive") %>
-    <%= image_tag(@user.profile_picture, :alt => @user.name, class:"img-responsive") %>
-  </div>
+    <div class="col-md-9">
 
-    <!-- name and bio -->
-    <div class="col-md-6">
-      <h4><%= @user.bio %></h4>
-
-      <h3>Courses currently teaching:</h3>
+      <h4>Courses currently teaching:</h4>
       <ul>
         <% @user.courses_taught.each do |taught| %>
           <li><%= taught.topic %></li>
         <% end %>
       </ul>
+      <%= link_to 'Create a course', '/courses/new', class: "btn btn-default"%>
+      <br></br>
 
-      <h3>Courses currently learning:</h3>
+      <h4>Courses currently learning:</h4>
       <ul>
         <% @user.courses_taken.each do |taken| %>
         <li><%= taken.topic %></li>
         <% end %>
       </ul>
+      <%= link_to 'Learn a course', '/courses', class: "btn btn-default"%>
+      <br></br>
 
     </div>
-  </div>
 
-</div>
+      <div class="col-md-6">
+        <%= link_to 'Website', @user.website, class: "btn btn-default"%>
+        <%= link_to 'Facebook', @user.facebook, class: "btn btn-default"%>
+        <%= link_to 'Twitter', @user.twitter, class: "btn btn-default"%>
+        <%= link_to 'LinkedIn', @user.linkedin, class: "btn btn-default"%>
+      </div>
+      <br></br>
 
-
-
-<div class="row">
-  <!-- social buttons -->
-
-  <div class="col-md-6">
-    <%= link_to 'Website', @user.website, class: "btn btn-default"%>
-    <%= link_to 'Facebook', @user.facebook, class: "btn btn-default"%>
-    <%= link_to 'Twitter', @user.twitter, class: "btn btn-default"%>
-    <%= link_to 'LinkedIn', @user.linkedin, class: "btn btn-default"%>
-
-  </div>
-
-  <%= link_to 'Create a course', '/courses/new', class: "btn btn-default"%>
-  <%= link_to 'Learn a course', '/courses', class: "btn btn-default"%>
-
-
-</div>
-
-
-
-<div class="container"> <!--Container-->
-
-
-
-  <div class="row"> <!--Row -->
-
-      <div class="fb span9 offset1">  <!--Cover-->
-
-      <div class="profilePhoto">   <%= image_tag(@user.profile_picture, :alt => @user.name, class:"img-responsive") %> </div>
-
-
-
-
-      </div>  <!--Cover-->
-
-
-      <div class="span2"> <!--Advertisement-->
-
-
-
-      </div> <!--Advertisement-->
-
-
-
-  </div> <!--Row-->
-
-       <div class="row"> <!--Row -->
-
-            <div class="panel span9 offset1"> <!--Panel -->
-
-                <div class="row"> <!--Row -->
-
-                    <div class="span9"> <!--Panel Inside -->
-
-                        <div class="row push"> <!--Row -->
-
-                          <!--First Line Panel -->
-
-                          <div class="span3 offset2 ">
-                            <p class="name"> Ali Gajani </p>
-                          </div>
-
-                          <div class="span2">
-                            <p class="panelButton"> Update <i class="icon-search"></i> </p>
-                          </div>
-
-                          <div class="span2">
-                            <p class="panelButton"> Activity <i class="icon-user"></i> </p>
-                          </div>
-
-
-                          <!--First Line Panel-->
-
-                        </div> <!--Row -->
-
-                        <div class="row"> <!--Row -->
-
-                          <!--Details -->
-
-                          <div class="span4 details ">
-                            <p> Founder at Mr. Geek </p>
-                            <p> Studied at The University of Sheffield </p>
-                            <p> Lives in Sheffield, United Kingdom </p>
-                            <p> From Mars, Universe </p>
-                          </div>
-
-                          <div class="span2"> <img src="http://placehold.it/200x90/"/></div>
-                          <div class="span2"> <img src="http://placehold.it/200x90"/></div>
-
-
-
-
-                          <!--Details -->
-
-
-                        </div><!--Row -->
-
-                    </div> <!--Panel Inside -->
-
-                </div>  <!--Row -->
-
-
-            </div> <!--Panel -->
-
-          </div> <!--Row -->
-
-</div> <!--Container-->
+</div> <!-- /container -->

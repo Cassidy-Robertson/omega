@@ -1,5 +1,7 @@
 class CoursesController < ApplicationController
 
+ skip_before_action :authenticate_user!, only: [:show]
+
   def index
     @courses = Course.all
   end
@@ -10,11 +12,19 @@ class CoursesController < ApplicationController
   end
 
   def create
-   binding.pry
    @course = Course.new(course_params)
    @course.teacher = current_user
    @course.save
 
+     redirect_to action: "index"
+    end
+
+    def show
+      @course = Course.find(params[:id])
+    end
+
+    def show
+    @course = Course.find(params[:id])
 
    redirect_to "/profiles/#{current_user.id}"
   end

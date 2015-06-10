@@ -2,7 +2,7 @@
 
 <% @courses.each do |course| %>
   <h3><%= course.topic %> </h3>
-  <%= button_to('Enroll', enrollments_path(course_id: course.id)) %>
+  <%= button_to('View Course', course, method: :get, class: "btn btn-default btn-sm") %>
   <% end %>
 
 

@@ -13,21 +13,20 @@ class CoursesController < ApplicationController
   end
 
   def create
+
     @course = Course.new(course_params)
     @course.teacher = current_user
     @course.save
-   
+
     @course.tag_list.add(params[:course][:tag_list], parse: true)
     
     redirect_to action: "index"
   end  
 
-
-    def show
+  def show
     @course = Course.find(params[:id])
 
-
-   redirect_to "/profiles/#{current_user.id}"
+    redirect_to "/profiles/#{current_user.id}"
   end
 
 

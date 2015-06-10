@@ -41,29 +41,15 @@
     </div><!-- /.container-fluid -->
   </nav>
 
-
-  <div class='container'>
-
-    <div class='row'>
-
-
-      <div class='col-md-9'>
-        <%= yield %>
-      </div>
-
-      <div class='col-md-3'>
+  <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
 
 
-        <% if notice %>
-          <p class="alert alert-success"><%= notice %></p>
-        <% end %>
-        <% if alert %>
-          <p class="alert alert-danger"><%= alert %></p>
-        <% end %>
-
-      </div>
-    </div>
-  </div>
+<%= yield %>
 
 
 </body>

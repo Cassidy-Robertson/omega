@@ -12,4 +12,8 @@ Rails.application.routes.draw do
 
   get 'search' => 'search#search'
 
+  get 'zipcodesearch' => 'search#zipcodesearch'
+
+  get 'datesearch' => 'search#datesearch'
+
 end

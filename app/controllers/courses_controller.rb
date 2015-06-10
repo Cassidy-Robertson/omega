@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
 
- skip_before_action :authenticate_user!, only: [:show]
+  skip_before_action :authenticate_user!, only: [:show]
 
   def index
     @courses = Course.all
@@ -19,9 +19,6 @@ class CoursesController < ApplicationController
      redirect_to action: "index"
     end
 
-    def show
-      @course = Course.find(params[:id])
-    end
 
     def show
     @course = Course.find(params[:id])
@@ -32,7 +29,7 @@ class CoursesController < ApplicationController
   private
 
   def course_params
-   params.require(:course).permit(:topic, :zipcode, :city, :state, :date, :description, :duration, :time, :street)
+   params.require(:course).permit(:topic, :date, :time, :street, :city, :state, :zipcode, :description, :duration)
   end
 
 end

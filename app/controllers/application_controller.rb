@@ -7,6 +7,14 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  before_action :random_number
+
+  def random_number
+    offset = rand(Course.count)
+    rand_record = Course.offset(offset).first
+    @random = rand_record[:id]
+  end
+
   protected
 
   def configure_permitted_parameters

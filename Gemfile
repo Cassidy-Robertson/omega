@@ -45,10 +45,10 @@ group :development, :test do
 end
 
 gem 'bootstrap-sass', '~> 3.3.4'
-#for bootstrap
+# for bootstrap
 
 gem 'rails_12factor', group: :production
-#for adding to heroku
+# for adding to heroku
 
 group :development do
   gem 'guard-livereload', '~> 2.4', require: false
@@ -71,11 +71,13 @@ gem 'devise'
 # adds letsrate gem for 5-star rating system
 gem 'letsrate'
 
-#for adding intrest tags
+# for adding intrest tags
 gem 'acts-as-taggable-on', '~> 3.4'
+
 
 #for the notification gem 
 gem "gritter", "1.1.0"
 
-
+# adds font awesome
+gem 'font-awesome-sass', '~> 4.3.0'
 

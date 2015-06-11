@@ -16,4 +16,6 @@ Rails.application.routes.draw do
 
   get 'datesearch' => 'search#datesearch'
 
+  get 'tag_search' => 'search#tag_search', as: :tag_search
+
 end

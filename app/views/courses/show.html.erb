@@ -1,4 +1,9 @@
+
+<h1>Welcome, to <%= @course.topic %>!</h1>
+<h2>Being taught by: <%= link_to @course.teacher.name, profile_path(@course.teacher.id)%> </h2>
+
 <div class="container">
+
 
   <h1><%= @course.topic %>!</h1>
   <h2>Taught by: <%= @course.teacher.name %> </h2>

@@ -38,6 +38,7 @@ class CoursesController < ApplicationController
 
   end
 
+
   def destroy
     @course = Course.find(params[:id])
     @course.destroy

@@ -27,12 +27,6 @@
         <ul class="nav navbar-nav">
         </ul>
         <ul class="nav navbar-nav navbar-right">
-
-          <% offset = rand(Course.count) %>
-          <% rand_record = Course.offset(offset).first %>
-          <% @random = rand_record[:id] %>
-
-
           <li><a href="/courses/<%= @random %>"> <i class="fa fa-trophy fa-2x" style="margin-top: -4px;"></i></a></li>
           <li><a href="/courses">Learn</a></li>
           <li><a href="/courses/new">Teach</a></li>

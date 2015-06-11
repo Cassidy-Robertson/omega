@@ -23,7 +23,6 @@ class CoursesController < ApplicationController
      flash.now[:notice] = "Invalid zipcode for the US and Canada."
      render :new
     end
-
   end
 
   def show
@@ -36,8 +35,6 @@ class CoursesController < ApplicationController
       @ind_tag = ind_tag
       Course.includes(:tags).where({:tags => {:name => "#{ind_tag}"}})
     end
-
-
   end
 
   def edit
@@ -50,6 +47,7 @@ class CoursesController < ApplicationController
 
     redirect_to @course
   end
+
 
   def destroy
     @course = Course.find(params[:id])

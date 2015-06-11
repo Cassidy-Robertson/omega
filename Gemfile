@@ -74,9 +74,11 @@ gem 'letsrate'
 # for adding intrest tags
 gem 'acts-as-taggable-on', '~> 3.4'
 
-
 #converts street addresses to latitude & longitude coordinates
 gem 'geokit-rails'
+
+#for the notification gem 
+gem "gritter", "1.1.0"
 
 # adds font awesome
 gem 'font-awesome-sass', '~> 4.3.0'

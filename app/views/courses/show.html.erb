@@ -1,13 +1,5 @@
 <h1>Welcome, to <%= @course.topic %>!</h1>
-<h2>Being taught by: <%= @course.teacher.name %> </h2>
-
-<!-- <h2>  Being taught by: <%= link_to(@course.teacher.name) do %>
-  <%= @course.teacher.name %>
-  <% end %>
-  -->
-<!-- line 4 - 6 is is my best attempt,  but it's having issues in the course controller -->
-
-</h2>
+<h2>Being taught by: <%= link_to @course.teacher.name, profile_path(@course.teacher.id)%> </h2>
 
 <h3>Course Description:</h3>
 <h4><%= @course.description %></h4>

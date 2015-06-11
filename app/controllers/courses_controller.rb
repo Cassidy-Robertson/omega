@@ -25,10 +25,7 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
-    # @course = Course.teacher.name(params[:id])
   end
-#whats wrong with this? How do I make it show the teacher of a course?
-#why is line 27 looking for a course with the ID of a teacher? 
 
   private
 

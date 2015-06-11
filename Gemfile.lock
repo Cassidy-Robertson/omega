@@ -342,9 +342,9 @@ DEPENDENCIES
   devise
   dotenv-rails
   fog
+  font-awesome-sass (~> 4.3.0)
   geokit-rails
   gritter (= 1.1.0)
-  font-awesome-sass (~> 4.3.0)
   guard-livereload (~> 2.4)
   jbuilder (~> 2.0)
   jquery-rails

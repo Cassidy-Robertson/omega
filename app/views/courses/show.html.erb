@@ -1,12 +1,7 @@
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLL89JyoNbSFC6xu01zVXA6jvG90ZOtjk"></script>
-<div id="map-canvas" style="width: 100%; height: 100%"></div>
-
 <div class="container">
 
 
-  <h1><%= @course.topic %>!</h1>
-  <h2>Taught by: <%= @course.teacher.name %> </h2>
+
 
   <div class="col-md-4 col-sm-6 col-xs-12">
     <div class="text-center">
@@ -15,7 +10,8 @@
   </div>
 
   <div class="col-xs-12 col-sm-8">
-    <h2><%= @course.teacher.name %></h2>
+    <h1><%= @course.topic %>!</h1>
+    <h2><%= link_to @course.teacher.name, profile_path(@course.teacher.id)%></h2>
     <p><strong>Course Description: </strong> <%= @course.description %> </p>
     <p><strong>Duration: </strong> <%= @course.duration %> </p>
     <p><strong>Date: </strong> <%= @course.date %> </p>

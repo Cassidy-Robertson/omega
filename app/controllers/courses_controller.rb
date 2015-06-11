@@ -23,6 +23,8 @@ class CoursesController < ApplicationController
   end
 
   def show
+    # require 'pry'
+    # binding.pry
     @course = Course.find(params[:id])
   end
 

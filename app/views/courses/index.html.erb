@@ -1,14 +1,35 @@
-<h1> Course Listings </h1>
+<center>
+html {
+  background-image: url('picture.jpg');
+}
 
-<% @courses.each do |course| %>
+<div class="row">
+  <div class="col-xs-12">
+    <h1> Choose a Class </h1>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-xs-6">
+   <h1> Choose a Class </h1>
+   <% @teacher.each do |course| %>
   <h3><%= course.topic %> </h3>
-  <%= button_to('View Course', course, method: :get, class: "btn btn-default btn-sm") %>
-
-  <% if course.teacher == current_user %>
-    <h3><%= button_to "delete", course,  data: { confirm: "Are you sure?" }, :method => :delete, class: "btn btn-danger btn-xs" %> </h3>
-
-    <h3><%= button_to "edit", edit_course_path(course), :method => :get, class: "btn btn-danger btn-xs" %> </h3>
+  <%= button_to('View Course', course, method: :get, class: "btn btn-border-d btn-circle") %>
   <% end %>
 
-<% end %>
+ </div>
+ <div class="col-xs-6">
+   <h1> Edit Your Courses </h1>
+   <% @potentialstudent .each do |course| %>
+  <h3><%= course.topic %> </h3>
+  <%= button_to('View Course', course, method: :get, class: "btn btn-border-d btn-circle") %>
 
+    <h3><%= button_to "delete", course,  data: { confirm: "Are you sure?" }, :method => :delete, class: "btn btn-border-d btn-circle btn-danger" %> </h3>
+
+    <h3><%= button_to "edit", edit_course_path(course), :method => :get, class: "btn btn-border-d btn-circle" "btn btn-border-d btn-circle"%> </h3>
+<% end %>
+ </div>
+</div>
+
+</center>

@@ -6,7 +6,14 @@ class Course < ActiveRecord::Base
   acts_as_taggable # Alias for acts_as_taggable_on :tags
   acts_as_taggable_on :tags, :skills, :interests
 
+
+  acts_as_mappable
+
+
+Geokit::Geocoders::GoogleGeocoder.api_key = ENV["GoogleGeocoder"]
+
   validates_format_of :zipcode,
      :with => /(^\d{5}(-\d{4})?$)|(^[ABCEGHJKLMNPRSTVXY]{1}\d{1}[A-Z]{1} *\d{1}[A-Z]{1}\d{1}$)/
 
 end
+

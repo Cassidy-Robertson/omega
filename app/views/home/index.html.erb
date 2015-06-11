@@ -1,3 +1,35 @@
+<section id="home" class="home-section bg-dark-30" data-background="<%= image_path("section-13.jpg") %>">
+
+  <!-- Youtube player start-->
+  <div class="video-player" data-property="{videoURL:'https://www.youtube.com/watch?v=JC82Il2cjqA', containment:'.home-section', startAt:0, mute:true, autoPlay:true, loop:true, opacity:1, showControls:false, showYTLogo:false, vol:25}"></div>
+  <!-- Youtube player end -->
+
+  <!-- Youtube controls start-->
+  <div class="video-controls-box">
+    <div class="container">
+      <div class="video-controls">
+        <a id="video-volume" class="fa fa-volume-up" href="#">&nbsp;</a>
+        <a id="video-play" class="fa fa-pause" href="#">&nbsp;</a>
+      </div>
+    </div>
+  </div>
+  <!-- Youtube controls end -->
+
+  <div class="hs-caption">
+    <div class="caption-content">
+      <div class="hs-title-size-1 font-alt mb-30">
+
+      </div>
+      <div class="hs-title-size-4 font-alt mb-40">
+        Share your knowledge
+      </div>
+      <a href="#about" class="section-scroll btn btn-border-w btn-round">Learn More</a>
+    </div>
+  </div>
+
+</section >
+
+
 <div id= home-center>
   <h3>Share your knowledge</h3>
   <%= form_tag("/search", method: "get") do %>

@@ -15,4 +15,9 @@ class SearchController < ApplicationController
     @dateresults = Course.where(date: @query)
    end
 
+  def tag_search
+    @query = params[:query]
+    @tag_search = Course.includes(:tags).where({:tags => {:name => @query}})
+  end
+
 end

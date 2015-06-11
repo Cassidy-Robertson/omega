@@ -28,6 +28,14 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
+    @tag = @course.tag_list
+
+    @tag.each do |ind_tag|
+      @ind_tag = ind_tag
+      Course.includes(:tags).where({:tags => {:name => "#{ind_tag}"}})
+    end
+
+
   end
 
   def destroy

@@ -1,3 +1,4 @@
+
 <div class="container">
 
     <div class="fb-profile">
@@ -14,7 +15,7 @@
       <h4>Courses currently teaching:</h4>
       <ul>
         <% @user.courses_taught.each do |taught| %>
-          <li><%= taught.topic %></li>
+          <li><%= link_to(taught.topic, course_path(taught.id)) %></li>
         <% end %>
       </ul>
       <%= link_to 'Create a course', '/courses/new', class: "btn btn-default"%>
@@ -23,12 +24,16 @@
       <h4>Courses currently learning:</h4>
       <ul>
         <% @user.courses_taken.each do |taken| %>
-        <li><%= taken.topic %></li>
+        <li><%= link_to(taken.topic, course_path(taken.id)) %></li>
         <% end %>
       </ul>
       <%= link_to 'Learn a course', '/courses', class: "btn btn-default"%>
       <br></br>
 
+      <h4>Edit a course: </h4>
+     </ul>
+     <%= link_to 'Edit course', '/courses', class: "btn btn-default"%>
+     <br></br>
     </div>
 
       <div class="col-md-6">

@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20150609150041) do
-
-
-
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,12 +23,12 @@ ActiveRecord::Schema.define(version: 20150609150041) do
     t.datetime "updated_at",  null: false
     t.date     "date"
     t.time     "time"
-    t.float    "duration"
     t.string   "street"
     t.string   "city"
     t.string   "state"
     t.string   "zipcode"
     t.text     "description"
+    t.float    "duration"
   end
 
   add_index "courses", ["teacher_id"], name: "index_courses_on_teacher_id", using: :btree
@@ -47,6 +43,24 @@ ActiveRecord::Schema.define(version: 20150609150041) do
   add_index "enrollments", ["course_id"], name: "index_enrollments_on_course_id", using: :btree
   add_index "enrollments", ["student_id"], name: "index_enrollments_on_student_id", using: :btree
 
+<<<<<<< HEAD
+  create_table "notifications", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "notifications", ["user_id"], name: "index_notifications_on_user_id", using: :btree
+
+  create_table "ratings", force: :cascade do |t|
+    t.string   "comment"
+    t.integer  "courses_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "ratings", ["courses_id"], name: "index_ratings_on_courses_id", using: :btree
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
@@ -67,7 +81,6 @@ ActiveRecord::Schema.define(version: 20150609150041) do
   end
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
-
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -96,4 +109,5 @@ ActiveRecord::Schema.define(version: 20150609150041) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "enrollments", "courses"
+  add_foreign_key "notifications", "users"
 end

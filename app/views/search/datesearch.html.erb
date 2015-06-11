@@ -1,8 +1,8 @@
 <% if @dateresults.length == 0 %>
     <h3> No such Course is offered at this date </h3>
   <% else %>
-  <% @dateresults.each do |results| %>
-    <h3><%= results.date.strftime("%m/%d/%y") %> </h3>
-    <h3><%= results.topic %> </h3>
+  <% @dateresults.each do |result| %>
+    <h3><%= result.date.strftime("%m/%d/%y") %> </h3>
+    <h3><%= link_to result.topic, result %> </h3>
   <% end %>
 <% end %>

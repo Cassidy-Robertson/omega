@@ -4,8 +4,12 @@ class CoursesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
 
 
+
   def index
     @courses = Course.all
+    @potentialstudent,@teacher = Course.all.partition do |course|
+      course.teacher == current_user
+    end
   end
 
 

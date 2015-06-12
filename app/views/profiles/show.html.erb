@@ -1,47 +1,61 @@
-
 <div class="container">
 
-    <div class="fb-profile">
+  <div class="row">
+    <div class="col-xs-12">
+
+      <div class="fb-profile">
         <img align="left" class="fb-image-lg" src="<%= @user.profile_background %>" alt="Profile image example"/>
         <img align="left" class="fb-image-profile thumbnail" src="<%= @user.profile_picture %>" alt="Profile image example"/>
         <div class="fb-profile-text">
-            <h1><%= @user.name %></h1>
-            <p><%= @user.bio %></p>
+          <h1><%= @user.name %></h1>
+          <p><%= @user.bio %></p>
         </div>
-    </div>
-
-    <div class="col-md-9">
-
-      <h4>Courses currently teaching:</h4>
-      <ul>
-        <% @user.courses_taught.each do |taught| %>
-          <li><%= link_to(taught.topic, course_path(taught.id)) %></li>
-        <% end %>
-      </ul>
-      <%= link_to 'Create a course', '/courses/new', class: "btn btn-default"%>
-      <br></br>
-
-      <h4>Courses currently learning:</h4>
-      <ul>
-        <% @user.courses_taken.each do |taken| %>
-        <li><%= link_to(taken.topic, course_path(taken.id)) %></li>
-        <% end %>
-      </ul>
-      <%= link_to 'Learn a course', '/courses', class: "btn btn-default"%>
-      <br></br>
-
-      <h4>Edit a course: </h4>
-     </ul>
-     <%= link_to 'Edit course', '/courses', class: "btn btn-default"%>
-     <br></br>
-    </div>
-
-      <div class="col-md-6">
-        <%= link_to 'Website', @user.website, class: "btn btn-default"%>
-        <%= link_to 'Facebook', @user.facebook, class: "btn btn-default"%>
-        <%= link_to 'Twitter', @user.twitter, class: "btn btn-default"%>
-        <%= link_to 'LinkedIn', @user.linkedin, class: "btn btn-default"%>
       </div>
-      <br></br>
 
-</div> <!-- /container -->
+      <!--     Socail buttons -->
+      <div class="social">
+        <ul>
+          <li><a href="#"><i class="fa fa-lg fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-lg fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-lg fa-linkedin"></i></a></li>
+          <li><a href="#"><i class="fa fa-lg fa-laptop"></i></a></li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <br></br>
+
+
+  <center>
+
+    <div class="row">
+      <div class="col-xs-6">
+
+        <h4>Courses currently teaching:</h4>
+        <ul style="list-style-type: none;">
+          <% @user.courses_taught.each do |taught| %>
+          <li><%= link_to(taught.topic, course_path(taught.id)) %></li>
+          <% end %>
+        </ul>
+        <%= link_to 'Create a course', '/courses/new', class: "btn btn-border-d btn-circle"%>
+        <br></br>
+      </ul>
+      <%= link_to 'Edit course', '/courses', class: "btn btn-border-d btn-circle"%>
+    </div>
+
+
+    <div class="col-xs-6">
+    </div>
+
+    <h4>Courses currently learning:</h4>
+    <ul style="list-style-type: none;">
+      <% @user.courses_taken.each do |taken| %>
+      <li><%= link_to(taken.topic, course_path(taken.id)) %></li>
+      <% end %>
+      <%= link_to 'Learn a course', '/courses', class: "btn btn-border-d btn-circle"%>
+    </ul>
+  </div>
+</center>
+</div>

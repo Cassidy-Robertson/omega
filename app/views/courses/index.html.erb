@@ -24,7 +24,7 @@
 </div>
 
 <div class="col-xs-6">
-   <h1 class= "font-alt"> Edit Your Courses </h1>
+   <h1 class= "font-alt"> Courses You've Created</h1>
      <% @potentialstudent .each do |course| %>
       <h3 class="font-alt"><%= course.topic %> </h3>
       <%= button_to('View Course', course, method: :get, class: "btn btn-border-d btn-circle") %>

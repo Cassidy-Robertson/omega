@@ -1,63 +1,74 @@
-<h2>Edit Course</h2>
-
-<div class="col-md-6 col-md-offset-6">
-
-<%= form_for(@course) do |f| %>
-
- <div class="field">
-   <%= f.label :topic %><br />
-   <%= f.text_field :topic %>
- </div>
-
- <div class="field">
-   <%= f.label :description %> <br />
-   <%= f.text_field :description %>
- </div>
-
- <div class="field">
-   <%= f.label :date %><br />
-   <%= f.date_field :date %>
- </div>
-
- <div class="field">
-   <%= f.label :time %> <br />
-   <%= f.time_field :time %>
- </div>
-
- <div class="field">
-  <%= f.label :duration %><br />
-  <%= f.number_field :duration, min: 0, step: 0.5  %>
-</div>
-
-<div class="field">
- <%= f.label :street %><br />
- <%= f.text_field :street %>
-</div>
-
-<div class="field">
- <%= f.label :city %><br />
- <%= f.text_field :city %>
-</div>
-
-<div class="field">
- <%= f.label :state %><br />
- <%= f.text_field :state %>
-</div>
-
-<div class="field">
- <%= f.label :zipcode %><br />
- <%= f.text_field :zipcode%>
-</div>
-
-
-<div class="field">
- <%= f.label :tag_list %><br />
- <%= f.text_field :tag_list%>
-</div>
-<%= f.submit %>
-<% end %>
-
-<%= link_to "Back", :back %>
-
 
 </div>
+
+<div class="container">
+
+ <div class="row">
+
+  <div class="col-sm-6 col-sm-offset-1 mb-sm-40" style="margin-left: 30%">
+
+   <h4 class="font-alt">Edit Your Course</h4>
+
+    <!-- Divider -->
+    <hr class="divider-w mb-10">
+    <!-- Divider -->
+
+
+   <%= form_for @course do |f| %>
+   <form class="form">
+    <div class="form-group">
+     <%= f.text_field :topic, :class => "form-control", :placeholder => "Topic" %>
+    </div>
+
+    <div class="form-group">
+     <%= f.text_field :description, :class => "form-control", :placeholder => "Description" %>
+    </div>
+
+    <div class="form-group">
+     <%= f.date_field :date, :class => "form-control", :placeholder => "Date" %>
+    </div>
+
+    <div class="form-group">
+     <%= f.time_field :time, :class => "form-control", :placeholder => "Time" %>
+    </div>
+
+    <div class="form-group">
+     <%= f.number_field :duration, min: 0, step: 0.5, :class => "form-control", :placeholder => "Duration" %>
+    </div>
+
+    <div class="form-group">
+     <%= f.text_field :street, :class => "form-control", :placeholder => "Street" %>
+    </div>
+
+    <div class="form-group">
+     <%= f.text_field :city, :class => "form-control", :placeholder => "City" %>
+    </div>
+
+    <div class="form-group">
+     <%= f.text_field :state, :class => "form-control", :placeholder => "State" %>
+    </div>
+
+    <div class="form-group">
+     <%= f.text_field :zipcode, :class => "form-control", :placeholder => "Zipcode" %>
+    </div>
+
+    <div class="form-group">
+     <%=f.text_field :tag_list, :class => "form-control", :placeholder => "tag list" %>
+    </div>
+
+
+    <div class="form-group">
+     <button class="btn btn-block btn-round btn-b">Submit</button>
+    </div>
+
+    <%end%>
+
+    <div class="form-group">
+         <%= link_to "Back", :back %>
+        </div>
+
+
+   </div>
+
+
+   </form>

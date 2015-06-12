@@ -1,32 +1,42 @@
+<div class="main">
+<section class="module-small bg-dark bg-dark-60" data-background="<%= image_path("section-4.jpg") %>">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+          <h1 class="module-title font-alt">Course List</h1>
+        </div>
+      </div><!-- .row -->
+
+    </div>
+  </section>
+
+
 <center>
 
 <div class="row">
-  <div class="col-xs-12">
-    <h1> Choose a Class </h1>
+  <div class="col-xs-6">
+   <h1 class ="font-alt"> Choose a Class </h1>
+   <% @teacher.each do |course| %>
+  <h3 class="font-alt"><%= course.topic %> </h3>
+  <%= button_to('View Course', course, method: :get, class: "btn btn-border-d btn-circle") %>
+  <% end %>
+</div>
+
+<div class="col-xs-6">
+   <h1 class= "font-alt"> Edit Your Courses </h1>
+     <% @potentialstudent .each do |course| %>
+      <h3 class="font-alt"><%= course.topic %> </h3>
+      <%= button_to('View Course', course, method: :get, class: "btn btn-border-d btn-circle") %>
+     
+      <h3><%= button_to "edit", edit_course_path(course), :method => :get, class: "btn btn-border-d btn-circle"%> </h3>
+
+       <h3 class="font-alt"><%= button_to "delete", course,  data: { confirm: "Are you sure?" }, :method => :delete, class: "btn btn-border-d-1 btn-circle" %> </h3>
+    <% end %>
   </div>
 </div>
 
-
-<div class="row">
-  <div class="col-xs-6">
-   <h1> Choose a Class </h1>
-   <% @teacher.each do |course| %>
-  <h3><%= course.topic %> </h3>
-  <%= button_to('View Course', course, method: :get, class: "btn btn-border-d btn-circle") %>
-  <% end %>
-
- </div>
- <div class="col-xs-6">
-   <h1> Edit Your Courses </h1>
-   <% @potentialstudent .each do |course| %>
-  <h3><%= course.topic %> </h3>
-  <%= button_to('View Course', course, method: :get, class: "btn btn-border-d btn-circle") %>
-
-    <h3><%= button_to "delete", course,  data: { confirm: "Are you sure?" }, :method => :delete, class: "btn btn-border-d btn-circle btn-danger" %> </h3>
-
-    <h3><%= button_to "edit", edit_course_path(course), :method => :get, class: "btn btn-border-d btn-circle" "btn btn-border-d btn-circle"%> </h3>
-<% end %>
- </div>
-</div>
-
 </center>
+
+
+</div>

@@ -21,14 +21,15 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-.btn.btn-border-d:hover,
-.btn.btn-border-d:focus {
-  background: red;
-  color: #444;
+
+.btn.btn-border-d-1 {
+  background: transparent;
+  border: 0px solid rgba(17, 17, 17, 1);
+  color: #111;
 }
 
-.btn.btn-border-d:hover,
-.btn.btn-border-d:focus {
-  background: red;
-  color: #444;
+.btn.btn-border-d-1:hover,
+.btn.btn-border-d-1:focus {
+  background: #931616;
+  color: #FFFFFF;
 }

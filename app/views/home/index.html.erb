@@ -1,4 +1,4 @@
-<section id="home" class="home-section bg-dark-30" data-background="<%= image_path("section-13.jpg") %>">
+<section id="home" class="home-section home-full-height bg-dark-30" data-background="<%= image_path("section-13.jpg") %>">
 
   <!-- Youtube player start-->
   <div class="video-player" data-property="{videoURL:'http://youtu.be/8xp4vEEUi0c', containment:'.home-section', startAt:0, mute:true, autoPlay:true, loop:true, opacity:1, showControls:false, showYTLogo:false, vol:25}"></div>
@@ -23,27 +23,31 @@
       <div class="hs-title-size-4 font-alt mb-40">
         Share your knowledge
       </div>
+
+      <div class = "row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+          <div id='home-search'>
+            <%= form_tag("/search", method: "get") do %>
+            <%= text_field_tag("query[text]", nil, placeholder: 'Search...', class: 'form-control') %>
+            <%= select(:query, :refinement, [[:topic, :topic], [:zipcode, :zipcode], [:date, :date]]) %>
+            <%= submit_tag("", class: "search-btn") %>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
+      <br></br>
       <a href="#about" class="section-scroll btn btn-border-w btn-round">Learn More</a>
+
     </div>
   </div>
-
 </section >
-
-
-<div id='home-search'>
-  <h3>Share your knowledge</h3>
-  <%= form_tag("/search", method: "get") do %>
-    <%= label_tag("query[text]", "Search for:") %>
-    <%= text_field_tag("query[text]") %>
-    <%= select(:query, :refinement, [[:zipcode, :zipcode], [:date, :date], [:topic, :topic]]) %>
-    <%= submit_tag("Search") %>
-  <% end %>
-</div>
 
 <div>
   <% @courses.each do |course| %>
-    <h3><%= course.topic %> </h3>
-    <%= button_to('View Course', course_path(course.id), method: :get, class: "btn btn-default btn-sm") %>
+  <h3><%= course.topic %> </h3>
+  <%= button_to('View Course', course_path(course.id), method: :get, class: "btn btn-default btn-sm") %>
   <% end %>
 </div>
 

@@ -19,7 +19,7 @@
     <p><strong>Location: </strong> <%= @course.street %>, <%= @course.city %>, <%= @course.state %> <%= @course.zipcode %> </p>
     <p><strong>Tags: </strong>
       <% @course.tag_list.each do |tags| %>
-      <span class="label label-info tags"><%= link_to(tags, tag_search_path({:query => tags})) %></span>
+      <span class="label label-info"><%= link_to(tags, tag_search_path({:query => tags})) %></span>
       <% end %>
     </p>
 
@@ -32,4 +32,3 @@
 </div>
 </div>
 </div>
-

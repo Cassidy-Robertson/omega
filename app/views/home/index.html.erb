@@ -30,33 +30,15 @@
 </section >
 
 
-<div id= home-center>
+<div id='home-search'>
   <h3>Share your knowledge</h3>
   <%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:query, "Search for:") %>
-  <%= text_field_tag(:query) %>
-  <%= submit_tag("Search") %>
+    <%= label_tag("query[text]", "Search for:") %>
+    <%= text_field_tag("query[text]") %>
+    <%= select(:query, :refinement, [[:zipcode, :zipcode], [:date, :date], [:topic, :topic]]) %>
+    <%= submit_tag("Search") %>
   <% end %>
 </div>
-
-<div id= home-center>
-  <h3>By zipcode</h3>
-  <%= form_tag("/zipcodesearch", method: "get") do %>
-    <%= label_tag(:query, "Search for:") %>
-    <%= text_field_tag(:query) %>
-    <%= submit_tag("Search") %>
-  <% end %>
-</div>
-
-<div id= home-center>
-  <h3>By date</h3>
-  <%= form_tag("/datesearch", method: "get") do %>
-    <%= label_tag(:query, "Search for:") %>
-    <%= date_field_tag(:query) %>
-   <%= submit_tag("Search") %>
-  <% end %>
-</div>
-
 
 <div>
   <% @courses.each do |course| %>

@@ -1808,7 +1808,7 @@ Tags
 ------------------------------------------------------------------- */
 
 .tags a {
-	background: #111;
+	/*background: #111;*/
 	display: inline-block;
 	font-size: 10px;
 	color: #fff;

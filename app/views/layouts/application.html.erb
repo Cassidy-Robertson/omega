@@ -3,48 +3,60 @@
 <head>
   <title>Omega</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLL89JyoNbSFC6xu01zVXA6jvG90ZOtjk"
- type="text/javascript"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLL89JyoNbSFC6xu01zVXA6jvG90ZOtjk" type="text/javascript"></script>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
-   <style type="text/css">
-      html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
-    </style>
-
-
+  <style type="text/css">
+    html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+  </style>
 
 </head>
 
 <body>
 
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/"><%= image_tag 'omega-logo.png', style: "max-width: 200px; margin-top: -14px;" %></a>
-      </div>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
+	<!-- Navigation start -->
+	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+
+		<div class="container">
+
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+        <a class="navbar-brand" href="/"><%= image_tag 'omega-logo.png', style: "max-width: 200px; margin-top: -14px;" %></a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="custom-collapse">
+
+				<ul class="nav navbar-nav navbar-right">
+
+					<li><a>&nbsp;</a></li>
+
           <li><a href="/courses/<%= @random %>"> <i class="fa fa-flask fa-2x" style="margin-top: -4px;"></i></a></li>
           <li><a href="/courses">Learn</a></li>
           <li><a href="/courses/new">Teach</a></li>
-          <%= form_tag("/search", method: "get", class: "navbar-form navbar-left") do %>
-          <%= text_field_tag(:query, nil, placeholder: 'Search for a course', class: 'form-control') %>
-          <%= submit_tag("Search", class: "btn btn-default") %>
-          <% end %>
+
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog fa-2x fa-spin" style="margin-top: -4px;"></i></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Search</a>
+						<ul class="dropdown-menu" role="menu">
+							<li>
+								<div class="dropdown-search">
+                  <%= form_tag("/search", method: "get", class: "navbar-form navbar-left") do %>
+                  <%= text_field_tag(:query, nil, placeholder: 'Search...', class: 'form-control') %>
+                  <%= submit_tag("", class: "search-btn") %>
+                  <% end %>
+								</div>
+							</li>
+						</ul>
+					</li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog fa-2x" style="margin-top: -6px;"></i></a>
             <ul class="dropdown-menu" role="menu">
               <li><% if user_signed_in? %></li>
               <li><%= link_to 'View profile', profile_path(current_user) %></li>
@@ -57,12 +69,15 @@
               <li><%= link_to "Login", new_user_session_path %></li>
               <% end %>
             </ul>
-          </li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
+					</li>
 
+				</ul>
+			</div>
+
+		</div>
+
+	</nav>
+	<!-- Navigation end -->
 
   <% if notice %>
     <p class="alert alert-success"><%= notice %></p>

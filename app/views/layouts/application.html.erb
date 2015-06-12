@@ -46,7 +46,7 @@
 						<ul class="dropdown-menu" role="menu">
 							<li>
 								<div class="dropdown-search">
-                  <%= form_tag("/search", method: "get", class: "navbar-form navbar-left") do %>
+                  <%= form_tag("/tag_search", method: "get", class: "navbar-form navbar-left") do %>
                   <%= text_field_tag(:query, nil, placeholder: 'Search...', class: 'form-control') %>
                   <%= submit_tag("", class: "search-btn") %>
                   <% end %>

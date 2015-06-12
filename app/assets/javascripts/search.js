@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('page:change', function(){
   $('#home-search form select').on('change', function(event){
     var $select = $(this);
     var selected = $select.val();

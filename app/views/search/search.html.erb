@@ -1,3 +1,26 @@
+
+<!-- Wrapper start -->
+<div class="main">
+
+  <!-- Header section start -->
+  <section class="module-small bg-dark bg-dark-60" data-background="<%= image_path("section-4.jpg") %>">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+          <h1 class="module-title font-alt">Search Results</h1>
+        </div>
+      </div><!-- .row -->
+    </div>
+  </section>
+   <!-- Header section end -->
+ <section class="module">
+  <div class="container">
+    <div class="row">
+     <div class="col-sm-8" style="margin-left: 10%">
+
+      <h2 class="font-alt"> Here are all the courses related to your search: </h2>
+
 <% if @results.length == 0 %>
     <h3> No such Course is offered at this time </h3>
   <% else %>
@@ -8,3 +31,7 @@
   <% end %>
 <% end %>
 
+      </div>
+    </div>
+  </div>
+</section>
